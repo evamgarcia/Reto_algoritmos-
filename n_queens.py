@@ -42,3 +42,8 @@ n = 4
 board = [[0 for i in range(n)] for j in range(n)]
 solve(board, 0)
 print("The total number of solutions are: ", len(solutions))
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+    solutions(10)
