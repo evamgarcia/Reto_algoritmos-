@@ -47,4 +47,3 @@ def open_knight_tour(n:int) -> list[list[int]]:
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-    solution(10)
