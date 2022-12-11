@@ -1,7 +1,7 @@
 from __future__ import annotations
 solutions = []
 
-def is_safe(board: list[list[int]], row: int, column: int) -> bool:
+def salvado(board: list[list[int]], row: int, column: int) -> bool:
     for i in range(len(board)):
         if board[row][i] == 1:
             return False
@@ -16,16 +16,16 @@ def is_safe(board: list[list[int]], row: int, column: int) -> bool:
             return False
     return True 
 
-def solve(board: list[list[int]], row:int) -> bool:
+def resolver(board: list[list[int]], row:int) -> bool:
     if row >= len(board):
         solutions.append(board)
         printboard(board)
         print()
         return True
     for i in range(len(board)):
-        if is_safe(board, row, i):
+        if salvado(board, row, i):
             board[row][i] = 1
-            solve(board, row +1)
+            resolver(board, row +1)
             board[row][i] = 0
     return False
 
@@ -40,7 +40,7 @@ def printboard(board: list[list[int]]) -> None:
 
 n = 4
 board = [[0 for i in range(n)] for j in range(n)]
-solve(board, 0)
+resolver(board, 0)
 print("The total number of solutions are: ", len(solutions))
 
 if __name__ == "__main__":
