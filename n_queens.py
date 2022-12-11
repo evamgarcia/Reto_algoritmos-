@@ -38,8 +38,12 @@ def printboard(board: list[list[int]]) -> None:
                 print(".", end=" ")
         print()
 
-n = 2
+n = 8
 board = [[0 for i in range(n)] for j in range(n)]
 resolver(board, 0)
 print("The total number of solutions are: ", len(solutions))
 
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+    solutions(10)
